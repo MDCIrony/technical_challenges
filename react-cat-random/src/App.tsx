@@ -14,17 +14,24 @@ export default function App() {
   }, [count]);
 
   useEffect(() => {
-    setImg(`${IMG_URL}${fact.split(" ", 3).join(" ")}`);
+    setImg(`${fact.split(" ", 3).join(" ")}`);
   }, [fact]);
 
   const handleClickCount = () => setCount(count + 1);
 
   return (
-    <main>
-      <h1>Hola mundo</h1>
-      <h3>The fact is: {fact}</h3>
-      <img src={img} alt={`An image with the first word from fact: ${fact}`} />
+    <main
+      style={{
+        display: "block",
+      }}
+    >
+      <h1>Hello catlover</h1>
       <Counter count={count} handleFunction={handleClickCount} />
+      <h3>The fact is: {fact}</h3>
+      <img
+        src={`${IMG_URL}${img}`}
+        alt={`An image with the first word from fact: ${fact}`}
+      />
     </main>
   );
 }
